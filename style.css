@@ -1,0 +1,59 @@
+.calculator {
+    width: 300px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #display {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 24px; /* Increased font size */
+    text-align: right;
+    border: 1px solid #eee;
+    border-radius: 3px;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  button {
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added transition */
+  }
+  button:hover {
+    background-color: #f0f0f0; /* Kept original hover for broader compatibility */
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Added shadow for hover */
+  }
+  .operator {
+    background-color: #f0ad4e; /* Orange for operators */
+    color: white;
+  }
+  .operator:hover {
+    background-color: #ec9a3b; /* Darker orange for hover */
+  }
+  .clear {
+    background-color: #d9534f; /* Red for clear */
+    color: white;
+  }
+  .clear:hover {
+    background-color: #c9302c; /* Darker red for hover */
+  }
+  .equals {
+    grid-column: span 2;
+    background-color: #5cb85c; /* Green for equals */
+    color: white;
+  }
+  .equals:hover {
+    background-color: #4cae4c; /* Darker green for hover */
+  }
+  .zero-button {
+    grid-column: span 2; /* Making 0 button wider */
+  }
