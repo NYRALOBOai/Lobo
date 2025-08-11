@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorldBox x AoE - IA Sandbox</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="toolbar">
+      <div class="group">
+        <label for="numAIs">Nº de IAs:</label>
+        <input id="numAIs" type="number" min="1" max="50" value="8" />
+        <label for="mapSize">Tamanho do mapa:</label>
+        <select id="mapSize">
+          <option value="128">128x128</option>
+          <option value="192" selected>192x192</option>
+          <option value="256">256x256</option>
+        </select>
+        <label for="seed">Seed:</label>
+        <input id="seed" type="text" placeholder="aleatória" />
+        <button id="btnStart">Iniciar</button>
+        <button id="btnReset">Reiniciar</button>
+      </div>
+      <div class="group">
+        <label for="speed">Velocidade:</label>
+        <input id="speed" type="range" min="0.25" max="4" value="1" step="0.25" />
+        <span id="speedVal">1x</span>
+        <button id="btnPause">Pausar</button>
+      </div>
+      <div class="group">
+        <span id="hud">—</span>
+      </div>
+    </div>
+
+    <div id="stageWrap">
+      <canvas id="stage" width="1024" height="768"></canvas>
+      <div id="legend"></div>
+    </div>
+
+    <div id="logWrap">
+      <h3>Eventos</h3>
+      <div id="log"></div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
