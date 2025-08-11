@@ -1,37 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-<title>Calculator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Strategy Game - Age of Learning</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="game-container">
+        <!-- Painel de Controle -->
+        <div class="control-panel">
+            <h1>AI Strategy Game</h1>
+            <div class="game-settings">
+                <label for="ai-count">Número de IAs:</label>
+                <input type="number" id="ai-count" min="2" max="8" value="4">
+                <button id="start-game">Iniciar Jogo</button>
+                <button id="pause-game">Pausar</button>
+                <button id="reset-game">Reiniciar</button>
+            </div>
+            <div class="game-info">
+                <div class="info-item">
+                    <span>Época:</span>
+                    <span id="current-era">Idade da Pedra</span>
+                </div>
+                <div class="info-item">
+                    <span>Turno:</span>
+                    <span id="current-turn">1</span>
+                </div>
+                <div class="info-item">
+                    <span>IAs Ativas:</span>
+                    <span id="active-ais">0</span>
+                </div>
+            </div>
+        </div>
 
-<div class="calculator">
-  <input type="text" id="display" disabled>
-  <div class="buttons">
-    <button class="clear">C</button>
-    <button class="operator">/</button>
-    <button class="operator">*</button>
-    <button class="operator">-</button>
+        <!-- Mapa do Jogo -->
+        <div class="game-map">
+            <canvas id="game-canvas" width="1200" height="800"></canvas>
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #8B4513;"></div>
+                    <span>Savana</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #228B22;"></div>
+                    <span>Floresta Tropical</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #F0F8FF;"></div>
+                    <span>Neve</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #FF4500;"></div>
+                    <span>Ilha Central (Perigosa)</span>
+                </div>
+            </div>
+        </div>
 
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button class="operator" rowspan="2">+</button>
+        <!-- Painel de Informações das IAs -->
+        <div class="ai-panel">
+            <h3>Informações das IAs</h3>
+            <div id="ai-list" class="ai-list">
+                <!-- IAs serão adicionadas dinamicamente aqui -->
+            </div>
+        </div>
 
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
+        <!-- Log de Eventos -->
+        <div class="event-log">
+            <h3>Log de Eventos</h3>
+            <div id="event-log-content" class="log-content">
+                <!-- Eventos serão adicionados dinamicamente aqui -->
+            </div>
+        </div>
 
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button class="equals" rowspan="2">=</button>
+        <!-- Painel de Estatísticas -->
+        <div class="stats-panel">
+            <h3>Estatísticas Globais</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Total de Recursos:</span>
+                    <span id="total-resources">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tecnologias Descobertas:</span>
+                    <span id="total-techs">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Alianças Formadas:</span>
+                    <span id="total-alliances">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Batalhas:</span>
+                    <span id="total-battles">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <button class="zero-button">0</button>
-    <button>.</button>
-  </div>
-</div>
-<script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
