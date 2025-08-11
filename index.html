@@ -1,37 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-<title>Calculator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Civilization - Jogo de Estratégia</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>AI Civilization</h1>
+            <div class="game-controls">
+                <label for="ai-count">Número de IAs:</label>
+                <select id="ai-count">
+                    <option value="2">2 IAs</option>
+                    <option value="4" selected>4 IAs</option>
+                    <option value="6">6 IAs</option>
+                    <option value="8">8 IAs</option>
+                </select>
+                <button id="start-game">Iniciar Jogo</button>
+                <button id="pause-game">Pausar</button>
+                <button id="reset-game">Reiniciar</button>
+            </div>
+        </header>
 
-<div class="calculator">
-  <input type="text" id="display" disabled>
-  <div class="buttons">
-    <button class="clear">C</button>
-    <button class="operator">/</button>
-    <button class="operator">*</button>
-    <button class="operator">-</button>
+        <div class="game-main">
+            <div class="game-info">
+                <div class="game-stats">
+                    <h3>Estatísticas do Jogo</h3>
+                    <div id="game-stats">
+                        <p>Época: <span id="current-era">Idade da Pedra</span></p>
+                        <p>Turno: <span id="current-turn">0</span></p>
+                        <p>IAs Ativas: <span id="active-ais">0</span></p>
+                    </div>
+                </div>
+                
+                <div class="ai-list">
+                    <h3>IAs no Jogo</h3>
+                    <div id="ai-list"></div>
+                </div>
+            </div>
 
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button class="operator" rowspan="2">+</button>
+            <div class="game-view">
+                <canvas id="game-canvas" width="1200" height="800"></canvas>
+                <div class="map-info">
+                    <p>Clima: <span id="current-climate">Tropical</span></p>
+                    <p>Recursos: <span id="available-resources">0</span></p>
+                </div>
+            </div>
+        </div>
 
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
+        <div class="game-log">
+            <h3>Log de Eventos</h3>
+            <div id="event-log"></div>
+        </div>
+    </div>
 
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button class="equals" rowspan="2">=</button>
-
-    <button class="zero-button">0</button>
-    <button>.</button>
-  </div>
-</div>
-<script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
